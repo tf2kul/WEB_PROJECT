@@ -1,21 +1,33 @@
 <?php
 
 include('db_con.php');
+session_start();
+$good_login = 0;
+$id = $_POST['id'];
+$pw = $_POST['pw'];
 
-$id = hash('sha512',$_POST['id']);
-$pw = hash('sha512',$_POST['pw']);
-
-if(!$_POST['id'] || !$_POST['pw']) {
+if(empty($id) || empty($pw)) {
     echo "아이디나 비밀번호를 치세요<br>";
     exit;
 }
-else if($id==hash('sha512',"123123") && $pw==hash('sha512',"123123")) {
-    echo "로그인 성공";
-}
+$hash_pw = hash('sha512',$pw);
+$query = "SELECT * from user";
+//$query = "SELECT * from login WHERE id==$id and pw==$pw";
+$last = $db->query($query);
+$last->setFetchMode(PDO::FETCH_ASSOC);
 
+while($row= $last->fetch()){
+if($id == $row['id'] && $hash_pw == $row['pw']) {
+	$good_login = 1;
+	}
+}
+if($good_login) {
+	echo "Login Success !";
+	exit;
+}
 else {
-    echo "로그인 실패";
-    exit;
+	echo "G00d..bye..";
+	exit;
 }
 
 ?>
