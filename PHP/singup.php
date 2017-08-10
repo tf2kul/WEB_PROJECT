@@ -3,10 +3,11 @@ include('db_con.php');
 
 $id = $_POST['id'];
 $pw = $_POST['pw'];
+$name = $_POST['name'];
 $re_pw = $_POST['re_pw'];
 
-if(empty($id) || empty($pw)) {
-    echo "아이디나 비밀번호를 입력하세요 구르트^^<br>";
+if(empty($id) || empty($pw)||empty($name)||empty($re_pw)) {
+    echo "전부 다 입력하세요 구르트^^<br>";
     exit;
 }
 
@@ -27,7 +28,7 @@ while($row= $last->fetch()){
 }
 
 $hash_pw = hash('sha512',$pw);
-$query = "INSERT INTO user VALUES('$id','$hash_pw')";
+$query = "INSERT INTO user VALUES('$id','$hash_pw','$re_pw','$name')";
 $signup = $db->exec($query);
 
 ?>
