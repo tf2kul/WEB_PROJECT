@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+</head>
+<body>
+    <div class="wrap"> 
+        <div class="content row">
+            <form action="../php/signup.php" class="col s12" method="POST">
+                    <div class="input-field col s6">
+                        <input id="name" type="text" class="validate" name="name">
+                        <label for="name">Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="email" type="email" class="validate" name="email">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="pw" type="password" class="validate" name="pw">
+                        <label for="pw">Password</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="re_pw" type="password" class="validate" name="re_pw">
+                        <label for="re_pw">Re-password</label>
+                    </div>
+                    <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
