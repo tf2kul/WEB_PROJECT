@@ -5,7 +5,10 @@
     <title>2조</title>
 </head>
 <body>
-    <div class="wrap">
+    <div id="wrap">
+       <?php
+            if(isset($_SESSION['id'])){
+        ?>
         <h1 class="rogo">
             <img src="" alt="">
         </h1>
@@ -16,6 +19,27 @@
             <a href="signup.html">아이디가 없으시다면?</a><br>
             <a href="forget.html">아이디/비밀번호 찾기</a>
         </form>
+        <?php
+            }else{
+        ?>
+        <div class="cafe_list">
+        <?php
+            //db에서 불러오기
+        ?>
+        <p>카페 목록이 없습니다.</p>
+        </div>
+        <div class="info">
+            <h1 class="face">
+                <img src="" alt="">
+            </h1>
+            <p>이름:</p>
+            <ul class="my_cafe">
+                <li></li>
+            </ul>
+        </div>
+        <?php
+            }
+        ?>
     </div>
 </body>
 </html>
