@@ -19,6 +19,7 @@ $last->setFetchMode(PDO::FETCH_ASSOC);
 while($row= $last->fetch()){
 if($id == $row['id'] && $hash_pw == $row['pw']) {
 	$good_login = 1;
+	break;
 	}
 }
 if($good_login) {
@@ -29,5 +30,10 @@ else {
 	echo "G00d..bye..";
 	exit;
 }
+
+
+
+
+
 
 ?>
