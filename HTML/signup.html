@@ -11,14 +11,18 @@
 <body>
     <div class="wrap"> 
         <div class="content row">
-            <form action="../php/signup.php" class="col s12" method="POST">
+            <form action="../php/signup.php" class="col s12" method="POST" enctype="multipart/form-data">
                     <div class="input-field col s6">
                         <input id="name" type="text" class="validate" name="name">
                         <label for="name">Name</label>
                     </div>
                     <div class="input-field col s6">
                         <input id="id" type="text" class="validate" name="id">
-                        <label for="id"Id</label>
+                        <label for="id">Id</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="email" type="email" class="validate" name="email">
+                        <label for="email">Email</label>
                     </div>
                     <div class="input-field col s6">
                         <input id="pw" type="password" class="validate" name="pw">
@@ -27,7 +31,7 @@
                     <div class="input-field col s6">
                         <input id="re_pw" type="password" class="validate" name="re_pw">
                         <label for="re_pw">Re-password</label>
-                    </div>
+                    </div>  
                     <button type="submit">Sign Up</button>
             </form>
         </div>
