@@ -10,6 +10,11 @@ if(empty($id) || empty($pw)) {
     echo "아이디나 비밀번호를 치세요<br>";
     exit;
 }
+$id = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $id);
+$pw = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $pw);
+$id=addslashes($id);
+$pw=addslashes($pw);
+
 $hash_pw = hash('sha512',$pw);
 $query = "SELECT * from user";
 //$query = "SELECT * from login WHERE id==$id and pw==$pw";
