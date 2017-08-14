@@ -118,8 +118,8 @@ INSERT INTO `comment` (`idx`, `id`, `name`, `content`, `number`) VALUES
 CREATE TABLE `user` (
   `idx` int(11) NOT NULL,
   `name` varchar(15) NOT NULL,
-  `id` varchar(30) NOT NULL,
-  `pw` varchar(30) NOT NULL,
+  `id` varchar(300) NOT NULL,
+  `pw` varchar(300) NOT NULL,
   `email` varchar(45) NOT NULL,
   `profile` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
