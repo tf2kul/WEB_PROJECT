@@ -7,6 +7,11 @@ $name = $_POST['name'];
 $re_pw = $_POST['re_pw'];
 $email = $_POST['email'];
 
+$id = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $id);
+$pw = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $pw);
+$name = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $name);
+$re_pw = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $re_pw);
+
 if(empty($id) || empty($pw)||empty($name)||empty($re_pw) || empty($email)) {
     echo "전부 다 입력하세요^^<br>";
     exit;

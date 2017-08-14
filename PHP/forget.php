@@ -2,10 +2,11 @@
 include('db_con.php');
 
 
-
-
 $email = $_POST['email'];
 $name = $_POST['name'];
+
+$email = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $email);
+$name = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $name;
 
 
 
@@ -39,6 +40,7 @@ if(empty($email)||empty($name) || empty($id)) {
 	echo "입력 좀 하고사시죠? ^^";
 	exit;
 }
+    $id = preg_replace("/[ #\&\+\-%@=\/\\\:;,\.'\"\^`~\_|\!\?\*$#<>()\[\]\{\}]/i", "", $id);
     echo "비밀번호를 찾습니다<br>";
 $query = "SELECT * from user";
 $last = $db->query($query);
